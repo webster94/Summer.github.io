@@ -1,0 +1,139 @@
+I",
+<p>An example post about code insertion into posts.</p>
+
+<!--more-->
+<h2 id="testing-code-snippet-highlight">Testing code snippet highlight</h2>
+
+<p>The following example shows how to highlight a piece of code throughout the use of Javascript:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="cm">/*jshint browser: true, strict: true, undef: true */</span>
+    <span class="cm">/*global define: false */</span>
+
+    <span class="p">(</span> <span class="kd">function</span><span class="p">(</span> <span class="nb">window</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+    <span class="c1">// class helper functions from bonzo https://github.com/ded/bonzo</span>
+
+    <span class="kd">function</span> <span class="nx">classReg</span><span class="p">(</span> <span class="nx">className</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="dl">"</span><span class="s2">(^|</span><span class="se">\\</span><span class="s2">s+)</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">className</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">(</span><span class="se">\\</span><span class="s2">s+|$)</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// classList support for class management</span>
+    <span class="c1">// altho to be fair, the api sucks because it won't accept multiple classes at once</span>
+    <span class="kd">var</span> <span class="nx">hasClass</span><span class="p">,</span> <span class="nx">addClass</span><span class="p">,</span> <span class="nx">removeClass</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="dl">'</span><span class="s1">classList</span><span class="dl">'</span> <span class="k">in</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">hasClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">elem</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span> <span class="nx">c</span> <span class="p">);</span>
+      <span class="p">};</span>
+      <span class="nx">addClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">elem</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="nx">c</span> <span class="p">);</span>
+      <span class="p">};</span>
+      <span class="nx">removeClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">elem</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span> <span class="nx">c</span> <span class="p">);</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">hasClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">classReg</span><span class="p">(</span> <span class="nx">c</span> <span class="p">).</span><span class="nx">test</span><span class="p">(</span> <span class="nx">elem</span><span class="p">.</span><span class="nx">className</span> <span class="p">);</span>
+      <span class="p">};</span>
+      <span class="nx">addClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nx">hasClass</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+          <span class="nx">elem</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">elem</span><span class="p">.</span><span class="nx">className</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">};</span>
+      <span class="nx">removeClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">elem</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="nx">elem</span><span class="p">.</span><span class="nx">className</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span> <span class="nx">classReg</span><span class="p">(</span> <span class="nx">c</span> <span class="p">),</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="p">);</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">toggleClass</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="nx">hasClass</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">)</span> <span class="p">?</span> <span class="nx">removeClass</span> <span class="p">:</span> <span class="nx">addClass</span><span class="p">;</span>
+      <span class="nx">fn</span><span class="p">(</span> <span class="nx">elem</span><span class="p">,</span> <span class="nx">c</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">classie</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="c1">// full names</span>
+      <span class="na">hasClass</span><span class="p">:</span> <span class="nx">hasClass</span><span class="p">,</span>
+      <span class="na">addClass</span><span class="p">:</span> <span class="nx">addClass</span><span class="p">,</span>
+      <span class="na">removeClass</span><span class="p">:</span> <span class="nx">removeClass</span><span class="p">,</span>
+      <span class="na">toggleClass</span><span class="p">:</span> <span class="nx">toggleClass</span><span class="p">,</span>
+      <span class="c1">// short names</span>
+      <span class="na">has</span><span class="p">:</span> <span class="nx">hasClass</span><span class="p">,</span>
+      <span class="na">add</span><span class="p">:</span> <span class="nx">addClass</span><span class="p">,</span>
+      <span class="na">remove</span><span class="p">:</span> <span class="nx">removeClass</span><span class="p">,</span>
+      <span class="na">toggle</span><span class="p">:</span> <span class="nx">toggleClass</span>
+    <span class="p">};</span>
+
+    <span class="c1">// transport</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="k">typeof</span> <span class="nx">define</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">function</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">define</span><span class="p">.</span><span class="nx">amd</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// AMD</span>
+      <span class="nx">define</span><span class="p">(</span> <span class="nx">classie</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// browser global</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">classie</span> <span class="o">=</span> <span class="nx">classie</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">})(</span> <span class="nb">window</span> <span class="p">);</span></code></pre></figure>
+
+<h2 id="code-highlighting-with-rounge-and-prism">Code highlighting with rounge and Prism</h2>
+
+<p>Another snippet rendered with the CSS code syntax:</p>
+
+<pre><code class="language-CSS">    @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Gentium+Book+Basic');
+    /* Reset CSS
+     * --------------------------------------- */
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+    form,fieldset,input,textarea,p,blockquote,th,td {
+        padding: 0;
+        margin: 0;
+    }
+    a{
+        text-decoration:none;
+    }
+    table {
+        border-spacing: 0;
+    }
+    fieldset,img {
+        border: 0;
+    }
+    address,caption,cite,code,dfn,em,strong,th,var {
+        font-weight: normal;
+        font-style: normal;
+    }
+</code></pre>
+<h2 id="using-snippet-rendered-with-the-html-code-syntax">Using snippet rendered with the HTML code syntax</h2>
+
+<pre><code class="language-HTML">
+&lt;div id="fullpage"&gt;
+    &lt;div data-anchor="0section" class="section" id="section0"&gt;
+
+        &lt;h1 class="heavy"&gt;Ready to follow &lt;br /&gt;your &lt;span class="pink"&gt;dreams?&lt;/span&gt;&lt;/h1&gt;
+        &lt;br /&gt;&lt;h2 class="large-blur"&gt;
+            &lt;span class="highlight-container"&gt;&lt;span class="highlight"&gt;
+                Put your dreams on first and follow that!
+            &lt;/span&gt;&lt;/span&gt;
+
+            &lt;br /&gt;
+
+                            
+
+        &lt;/h2&gt;
+            &lt;div class="intro-scroll-down"&gt;
+              &lt;a data-menuanchor="1section" href="#1section"&gt;
+                &lt;span class="mouse"&gt;
+                  &lt;span class="mouse-dot"&gt;&lt;/span&gt;
+                &lt;/span&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+
+
+
+    &lt;/div&gt;
+</code></pre>
+
+<p><strong>Check the markdown of this example in order to fully comprehend the correct syntax.</strong></p>
+
+<p><a href="https://github.com/sentenza/sentenza.github.io/issues/1">Here</a> you can find more detailed information.</p>
+:ET
