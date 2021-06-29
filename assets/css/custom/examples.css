@@ -1,5 +1,8 @@
 @CHARSET "ISO-8859-1";
-
+@font-face {
+  font-family: 'korean';
+  src: url('../../fonts/Korean/korean.ttf') format('truetype');
+}
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Gentium+Book+Basic');
 /* Reset CSS
  * --------------------------------------- */
@@ -7,7 +10,7 @@
 /* Custom CSS
  * --------------------------------------- */
 body{
-	font-family: 'Gentium Book Basic', cursive;
+	font-family: 'korean';
 	color: #fff;
 	color: rgba(0,0,0,0.5);
 }
