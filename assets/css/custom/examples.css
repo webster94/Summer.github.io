@@ -1,8 +1,5 @@
 @CHARSET "ISO-8859-1";
-@font-face {
-  font-family: 'korean';
-  src: url('../../fonts/Korean/korean.ttf') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Gentium+Book+Basic');
 /* Reset CSS
  * --------------------------------------- */
@@ -10,7 +7,7 @@
 /* Custom CSS
  * --------------------------------------- */
 body{
-	font-family: 'korean';
+	font-family: 'Black Han Sans', sans-serif;
 	color: #fff;
 	color: rgba(0,0,0,0.5);
 }
@@ -49,7 +46,6 @@ h1{
 p{
 	font-size: 2em;
 }*/
-}
 .twitter-share-button{
 	position: fixed;
 	z-index: 99;

@@ -1,7 +1,5 @@
-@font-face {
-    font-family: 'korean';
-    src: url('../../fonts/Korean/korean.ttf') format('truetype');
-  }
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     /* Style for our header texts
@@ -9,7 +7,7 @@
 
     .jumbotronic h1{
   
-      font-family: 'korean', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       font-size: 3em;
       padding: 1rem 1rem;
       color: #ffffff;
@@ -20,7 +18,7 @@
     }
 
     .jumbotronic h2{
-      font-family: 'Gentium Book Basic', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       font-size: 1.5em;
       padding: 1.5rem 1.5rem;
       color: #ffffff;
@@ -28,14 +26,14 @@
     .sidebar{visibility: hidden;}
     h1{
       font-size: 2.5em;
-      font-family: 'korean';
+      font-family: 'Black Han Sans', sans-serif;
       color: #fff;
       margin:0;
       padding:0;
     }
     h2{
       font-size: 1em;
-      font-family: 'Gentium Book Basic', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       color: #fff;
       margin:0;
       padding:0;
@@ -84,7 +82,7 @@
     .sidebar{width: 262px; left: 70%; top: 0px; position: fixed;}
     .jumbotronic h1{
       
-      font-family: 'Alfa Slab One', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       font-size: 4em;
       padding: 1rem 1rem;
       color: #ffffff;
@@ -102,21 +100,21 @@
     }  
     h1{
       font-size: 5em;
-      font-family: 'Alfa Slab One', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       color: #fff;
       margin:0;
       padding:0;
     }
     h2{
       font-size: 3em;
-      font-family: 'Gentium Book Basic', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       color: #fff;
       margin:0;
       padding:0;
     }
     h3{
       font-size: 2em;
-      font-family: 'Gentium Book Basic', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       color: #fff;
       margin:0;
       padding:0;
@@ -280,7 +278,7 @@
 
     .jumbotronic h1{
   
-      font-family: 'korean', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       font-size: 4em;
       padding: 1rem 1rem;
       color: #ffffff;
@@ -298,7 +296,7 @@
     }
     h1{
       font-size: 5em;
-      font-family: 'korean', cursive;
+      font-family: 'Black Han Sans', sans-serif;
       color: #fff;
       margin:0;
       padding:0;
