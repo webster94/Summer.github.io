@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'korean';
+    src: url('../../fonts/Korean/korean.ttf') format('truetype');
+  }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     /* Style for our header texts
@@ -6,7 +9,7 @@
 
     .jumbotronic h1{
   
-      font-family: 'Alfa Slab One', cursive;
+      font-family: 'korean', cursive;
       font-size: 3em;
       padding: 1rem 1rem;
       color: #ffffff;
@@ -25,7 +28,7 @@
     .sidebar{visibility: hidden;}
     h1{
       font-size: 2.5em;
-      font-family: 'Alfa Slab One', cursive;
+      font-family: 'korean';
       color: #fff;
       margin:0;
       padding:0;
@@ -277,7 +280,7 @@
 
     .jumbotronic h1{
   
-      font-family: 'Alfa Slab One', cursive;
+      font-family: 'korean', cursive;
       font-size: 4em;
       padding: 1rem 1rem;
       color: #ffffff;
@@ -295,7 +298,7 @@
     }
     h1{
       font-size: 5em;
-      font-family: 'Alfa Slab One', cursive;
+      font-family: 'korean', cursive;
       color: #fff;
       margin:0;
       padding:0;
