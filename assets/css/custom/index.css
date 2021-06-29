@@ -1,36 +1,28 @@
 @media only screen and (orientation: landscape) {
-@font-face {
-    font-family: 'korean';
-    src: url('../../fonts/Korean/RixYeoljeongdo\ Regular.ttf') format('truetype');
-}
+
   /* Defining each sectino background and styles
   * --------------------------------------- */
   #section0{
     background-image: url(/assets/img/big/universe1.jpg);
     padding: 6% 0 0 0;
-    font-family:'korean';
 
   }
   #section1{
     background-image: url(/assets/img/big/universe2.jpg);
     padding: 6% 0 0 0;
-    font-family: 'korean';
   }
 
   #section2{
     background-image: url(/assets/img/big/universe3.jpg);
     padding: 6% 0 0 0;
-    font-family: 'korean';
   }
   #section3{
     background-image: url(/assets/img/big/universe4.jpg);
     padding: 6% 0 0 0;
-    font-family: 'korean';
   }
   #section4{
     background-image: url(/assets/img/big/universe5.jpg);
     padding: 6% 0 0 0;
-    font-family: 'korean';
   }
 
 
